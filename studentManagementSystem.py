@@ -77,5 +77,13 @@ class StudentManagement:
         """
         if not self.classroom:
             print("The classroom is empty.")
-        for students in self.classroom.values:
+        for students in self.classroom.values():
             print(students)
+            
+    
+    def find_student(self, id_to_find: int):
+        for keys in self.classroom:
+            if id_to_find == keys:
+                print(str(self.classroom[id_to_find]) + "was found in the classroom.")
+                return
+        print(f"Student {id_to_find} was not found in the classroom.") 

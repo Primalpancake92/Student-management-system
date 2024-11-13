@@ -113,4 +113,4 @@ class Student:
     def __str__(self):
         """_summary_
         """
-        print(f"\nStudent ID: {self.student_id}\Student Name: {self.first_name} + ' ' + {self.last_name}\nAge: {self.age}\nGrade: {self.grade}\nEnrolment Status: {self.enrolled}")
+        return f"\nStudent ID: {self.student_id}\nStudent Name: {self.first_name} + ' ' + {self.last_name}\nAge: {self.age}\nGrade: {self.grade}\nEnrolment Status: {self.enrolled}"
