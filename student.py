@@ -1,13 +1,14 @@
 class Student:
     def __init__(self, student_id: int, first_name: str, last_name: str, age: int, grade: str):
-        """_summary_
+        """This class stores the blueprint of every student object that is going to be added
+        in the StudentManagementSystem dictionary. 
 
         Args:
-            student_id (int): _description_
-            first_name (str): _description_
-            last_name (str): _description_
-            age (int): _description_
-            grade (str): _description_
+            student_id (int): Takes in an integer as the student_id.
+            first_name (str): Takes a string that is going to be the first name.
+            last_name (str): Takes a string that is going to be the last name.
+            age (int): Takes in an integer that is going to be the age of the object.
+            grade (str): Takes in a character that is going to be the grade.
         """
         self.student_id = student_id 
         self.first_name = first_name
