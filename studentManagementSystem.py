@@ -87,7 +87,11 @@ class StudentManagement:
                 print(str(self.classroom[id_to_find]) + "was found in the classroom.")
                 return
             print(f"Student {id_to_find} was not found in the classroom.") 
-            
-            
+    
+    def __str__(self):
+        for student in self.classroom:
+            formatted = student.__str__()
+            return formatted
+    
     def get_classroom(self):
-        return self.classroom
+        return f"{self.classroom.__str__()}"

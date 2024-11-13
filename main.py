@@ -8,10 +8,8 @@ def making_class():
         user_input = input("Enter student details for the classroom (-1 to exit): ")
         
         if user_input.strip() == "-1":
-            print("Goodbye.")
-        elif user_input.strip() == "done":
-            return f"{classroom.get_classroom()}"
-            
+            return classroom
+        
         token = user_input.split(" ")
         
         student_id, first_name, last_name, age, grade = token
@@ -19,19 +17,18 @@ def making_class():
         try: 
             student_id = int(student_id)
             age = int(age)
-
-            if not (int(student_id) or int(age)) or not (int(student_id) and int(age)):
-                raise ValueError("Student ID number and age must be a number. Please try again.") 
             
-        except ValueError as e:
-            print(e)
+        except ValueError:
+            print("Student ID and/or age must be a number. Please try again.")
+            continue
+                
                 
         classroom.add_student(student_id, first_name, last_name, age, grade)
         
-    
         
 def main():
-    print(making_class())
+    classroom = making_class()
+    print(classroom)
     
 
 if __name__ == "__main__":
