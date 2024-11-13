@@ -8,14 +8,23 @@ class StudentManagement:
         
         
     def add_student(self, student_id: int, first_name: str, last_name: str, age: int, grade: str):
-        """_summary_
-
+        """This is a method that takes in arguments: student_id, first_name, last_name, age, and grade.
+        What it does is instantiates that student objects inside the method, via the parameters on line 25.
+        These objects are then added to the dictionary, via a student_id key. However, if the student 
+        object in question already exists, then this method will stop and print a message stating that 
+        this student is already in the dictionary.
+        
+        Future plan to implementing this method is to use an input token that takes in multiple arguments
+        in a single instance. Through a try and except block, we can parse these arguments prior to them 
+        being used so it does not crash the program, when an error occurs. Through this input token, we can
+        pass these through as this method's arguments to add students. 
+        
         Args:
-            student_id (int): _description_
-            first_name (str): _description_
-            last_name (str): _description_
-            age (int): _description_
-            grade (str): _description_
+            student_id (int): Takes in the student_id as an argument 
+            first_name (str): Takes in the first_name as an argument
+            last_name (str): Takes in the last_name as an argument
+            age (int): Takes in the age as an argument
+            grade (str): Takes in the grade as an argument.
         """
         for sid in self.classroom:
             if sid == student_id:
@@ -64,4 +73,9 @@ class StudentManagement:
         
     
     def view_class_details(self):
-        print()
+        """_summary_
+        """
+        if not self.classroom:
+            print("The classroom is empty.")
+        for students in self.classroom.values:
+            print(students)
